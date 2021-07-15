@@ -16,6 +16,7 @@ o.hlsearch = false
 o.incsearch = true
 o.ruler = true
 o.showmatch = true
+o.termguicolors = true
 o.wrap = false
 
 o.bg = 'dark'

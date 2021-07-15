@@ -1,4 +1,4 @@
-runtime! basic-text-settings
+runtime! basic-text-settings.lua
 set tw=70
 
 " Fold expressions {{{1

@@ -29,13 +29,6 @@ au FileType go autocmd BufWritePre <buffer> GoFmt
 
 runtime! abbrevations.vim
 
-if has('nvim')
-    let s:editor_root=expand("~/.config/nvim")
-else
-    let s:editor_root=expand("~/.vim")
-endif
-
-packloadall
 silent! helptags ALL
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
@@ -44,29 +37,10 @@ xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 
-set bg=light
 colorscheme typewriter-night
 
-if has("gui")
-	set
-		\ guifont=Input\ Mono\ Thin\ 14
-		\ guioptions-=r
-		\ guioptions-=M
-		\ guioptions-=T
-
-	function GuiSettings()
-		let g:ale_sign_column_always = 1
-
-		set
-			\ columns=80
-			\ lines=40
-	endfunction
-
-	au GuiEnter * call GuiSettings()
-endif
-
 " Kitty terminal doesn't seem to like undercurl
-hi SpellBad term=underline cterm=underline
+" hi SpellBad term=underline cterm=underline
 
 if &term =~ '^tmux' || &term =~ '^screen' || &term =~ '^xterm'
   let &t_BE="\<Esc>[?2004h"
