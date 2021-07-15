@@ -1,6 +1,5 @@
-runtime! basic-text-settings.vim
+runtime! basic-text-settings
 set tw=70
-let g:indentLine_enabled=0
 
 " Fold expressions {{{1
 function! StackedMarkdownFolds()

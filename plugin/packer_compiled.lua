@@ -77,17 +77,29 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/lars/.local/share/nvim/site/pack/packer/start/firenvim"
   },
+  ["gitsigns.nvim"] = {
+    loaded = true,
+    path = "/home/lars/.local/share/nvim/site/pack/packer/start/gitsigns.nvim"
+  },
   ["goyo.vim"] = {
     loaded = true,
     path = "/home/lars/.local/share/nvim/site/pack/packer/start/goyo.vim"
   },
-  indentline = {
+  ["indent-blankline.nvim"] = {
     loaded = true,
-    path = "/home/lars/.local/share/nvim/site/pack/packer/start/indentline"
+    path = "/home/lars/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim"
   },
   ["limelight.vim"] = {
     loaded = true,
     path = "/home/lars/.local/share/nvim/site/pack/packer/start/limelight.vim"
+  },
+  ["nvim-lspconfig"] = {
+    loaded = true,
+    path = "/home/lars/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
+  },
+  ["nvim-treesitter"] = {
+    loaded = true,
+    path = "/home/lars/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -101,17 +113,9 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/lars/.local/share/nvim/site/pack/packer/start/vim-easy-align"
   },
-  ["vim-fugitive"] = {
-    loaded = true,
-    path = "/home/lars/.local/share/nvim/site/pack/packer/start/vim-fugitive"
-  },
   ["vim-go"] = {
     loaded = true,
     path = "/home/lars/.local/share/nvim/site/pack/packer/start/vim-go"
-  },
-  ["vim-signify"] = {
-    loaded = true,
-    path = "/home/lars/.local/share/nvim/site/pack/packer/start/vim-signify"
   },
   ["vim-vinegar"] = {
     loaded = true,

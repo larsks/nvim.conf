@@ -1,2 +1,2 @@
-runtime! basic-text-settings.vim
+runtime! basic-text-settings
 set wrap linebreak

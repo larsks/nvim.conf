@@ -1,33 +1,5 @@
 " the kitty terminal does not support background color erase properly
-let &t_ut=''
-
-set bg=dark
-	\ nohlsearch
-	\ bs=indent,eol,start
-	\ ai
-	\ ruler
-	\ nowrap
-	\ cmdheight=2
-	\ laststatus=2
-	\ showtabline=2
-	\ showmatch
-	\ guioptions+=f
-	\ guioptions-=m
-	\ incsearch
-	\ mousemodel=popup_setpos
-	\ colorcolumn=80
-	\ nocompatible
-	\ tabpagemax=100
-	\ concealcursor=c
-	\ updatetime=100
-
-" stop trying to open .mpy files
-set wildignore+=*.mpy
-
-syntax on
-
-" read/write a .viminfo file, don't store more than 50 lines of registers
-set viminfo='20,\"50
+" let &t_ut=''
 
 filetype on
 filetype plugin on
@@ -66,10 +38,6 @@ endif
 packloadall
 silent! helptags ALL
 
-let g:indentLine_concealcursor = 'nc'
-let g:indentLine_conceallevel = 2
-let g:indentLine_char = "┆"
-
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
 
@@ -77,7 +45,7 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 set bg=light
-colorscheme typewriter
+colorscheme typewriter-night
 
 if has("gui")
 	set
