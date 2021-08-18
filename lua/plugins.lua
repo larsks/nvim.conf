@@ -12,4 +12,6 @@ return require('packer').startup(function()
   use 'tpope/vim-vinegar'
   use 'vim-airline/vim-airline'
   use 'wbthomason/packer.nvim'
+  use 'maxbane/vim-asm_ca65'
+  use 'dhruvasagar/vim-table-mode'
 end)
