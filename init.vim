@@ -37,7 +37,7 @@ xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 
-colorscheme typewriter-night
+colorscheme pencil
 
 " Kitty terminal doesn't seem to like undercurl
 " hi SpellBad term=underline cterm=underline
