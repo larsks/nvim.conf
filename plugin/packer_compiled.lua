@@ -109,6 +109,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/lars/.local/share/nvim/site/pack/packer/start/vim-airline"
   },
+  ["vim-asm_ca65"] = {
+    loaded = true,
+    path = "/home/lars/.local/share/nvim/site/pack/packer/start/vim-asm_ca65"
+  },
   ["vim-easy-align"] = {
     loaded = true,
     path = "/home/lars/.local/share/nvim/site/pack/packer/start/vim-easy-align"
@@ -116,6 +120,10 @@ _G.packer_plugins = {
   ["vim-go"] = {
     loaded = true,
     path = "/home/lars/.local/share/nvim/site/pack/packer/start/vim-go"
+  },
+  ["vim-table-mode"] = {
+    loaded = true,
+    path = "/home/lars/.local/share/nvim/site/pack/packer/start/vim-table-mode"
   },
   ["vim-vinegar"] = {
     loaded = true,
