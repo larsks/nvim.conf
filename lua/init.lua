@@ -35,14 +35,3 @@ o.updatetime = 100
 o.wildignore = "*.mpy"
 
 require('plugins')
-
--- copy-paste from https://oroques.dev/notes/neovim-init/
-local ts = require 'nvim-treesitter.configs'
-ts.setup {ensure_installed = 'maintained',
-	highlight = {
-		enable = true,
-		additional_vim_regex_highlighting = false,
-	},
-}
-
-g.indent_blankline_char = "┆"
