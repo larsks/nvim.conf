@@ -26,6 +26,7 @@ au! BufRead,BufNewFile *.pp setfiletype puppet
 au! BufRead,BufNewFile Puppetfile setfiletype ruby
 au! BufRead,BufNewFile *.s setlocal ft=asm_ca65
 au FileType go autocmd BufWritePre <buffer> GoFmt
+au FileType python autocmd BufWritePre <buffer> Black
 
 runtime! abbrevations.vim
 
