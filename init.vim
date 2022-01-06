@@ -69,6 +69,14 @@ let fc = g:firenvim_config['localSettings']
 
 if exists('g:started_by_firenvim')
   set laststatus=0
+  set guifont=monospace:h12
 endif
 
+let g:neomake_python_enabled_makers = ['flake8']
+let g:SimpylFold_fold_import = 0
+
 lua require('init')
+
+" Full config: when writing or reading a buffer, and on changes in insert and
+" normal mode (after 500ms; no delay when writing).
+call neomake#configure#automake('nrwi', 500)
