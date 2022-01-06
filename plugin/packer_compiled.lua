@@ -77,6 +77,14 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/lars/.local/share/nvim/site/pack/packer/start/firenvim"
   },
+  fzf = {
+    loaded = true,
+    path = "/home/lars/.local/share/nvim/site/pack/packer/start/fzf"
+  },
+  ["fzf.vim"] = {
+    loaded = true,
+    path = "/home/lars/.local/share/nvim/site/pack/packer/start/fzf.vim"
+  },
   ["gitsigns.nvim"] = {
     loaded = true,
     path = "/home/lars/.local/share/nvim/site/pack/packer/start/gitsigns.nvim"

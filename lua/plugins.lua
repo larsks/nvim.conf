@@ -8,10 +8,14 @@ return require('packer').startup(function()
   use 'lewis6991/gitsigns.nvim'
   use 'lukas-reineke/indent-blankline.nvim'
   use 'neovim/nvim-lspconfig'
-  use 'nvim-treesitter/nvim-treesitter'
   use 'tpope/vim-vinegar'
   use 'vim-airline/vim-airline'
   use 'wbthomason/packer.nvim'
   use 'maxbane/vim-asm_ca65'
   use 'dhruvasagar/vim-table-mode'
+  use { 'junegunn/fzf', run = function() vim.fn['fzf#install'](0) end }
+  use 'junegunn/fzf.vim'
+  use 'psf/black'
+  use 'neomake/neomake'
+  use 'tmhedberg/SimpylFold'
 end)
