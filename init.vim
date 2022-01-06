@@ -21,7 +21,7 @@ au BufRead *stackexchange.com* setlocal ft=markdown
 au BufRead *ask.openstack.org* setlocal ft=markdown
 au BufRead *ask.fedoraproject.org* setlocal ft=markdown
 au BufRead *github.com* setlocal ft=markdown
-au BufRead */COMMIT_EDITMSG setlocal ft=markdown
+au BufRead */COMMIT_EDITMSG setlocal ft=markdown tw=75
 au! BufRead,BufNewFile *.pp setfiletype puppet
 au! BufRead,BufNewFile Puppetfile setfiletype ruby
 au! BufRead,BufNewFile *.s setlocal ft=asm_ca65
