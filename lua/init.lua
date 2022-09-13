@@ -36,8 +36,6 @@ o.signcolumn = "yes:2"
 -- appears to default to the empty string this should be fine.
 o.wildignore = "*.mpy"
 
-g.mapleader = ","
-
 g.firenvim_config = {
     localSettings = {
         [".*"] = {
