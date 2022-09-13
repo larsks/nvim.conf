@@ -30,8 +30,26 @@ o.showtabline = 2
 o.tabpagemax = 100
 o.updatetime = 100
 
+o.signcolumn = "yes:2"
+
 -- in init.vim this was set wildignore += "*.mpy", but since wildignore
 -- appears to default to the empty string this should be fine.
 o.wildignore = "*.mpy"
 
+g.mapleader = ","
+
+g.firenvim_config = {
+    localSettings = {
+        [".*"] = {
+            cmdline = "neovim",
+            content = "text",
+            priority = 0,
+            selector = "textarea",
+            takeover = "never",
+        },
+    }
+}
+
 require('plugins')
+require('init_lspconfig')
+require('init_cmp')

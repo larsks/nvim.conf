@@ -11,6 +11,11 @@ map MK :make clean<cr>
 map ]l :lnext<cr>
 map [l :lprev<cr>
 
+nnoremap <Down> gj
+nnoremap <Up> gk
+vnoremap <Down> gj
+vnoremap <Up> gk
+
 au BufRead *.ksy setlocal ft=yaml
 au BufRead *.md setlocal ft=markdown
 au BufRead *.ldg setlocal ft=ledger
@@ -20,13 +25,31 @@ au BufRead *stackoverflow.com* setlocal ft=markdown
 au BufRead *stackexchange.com* setlocal ft=markdown
 au BufRead *ask.openstack.org* setlocal ft=markdown
 au BufRead *ask.fedoraproject.org* setlocal ft=markdown
-au BufRead *github.com* setlocal ft=markdown
+au BufRead *github.com* setlocal ft=markdown tw=0
 au BufRead */COMMIT_EDITMSG setlocal ft=markdown tw=75
+au! BufRead,BufNewFile *.bu setlocal ft=yaml
 au! BufRead,BufNewFile *.pp setfiletype puppet
 au! BufRead,BufNewFile Puppetfile setfiletype ruby
 au! BufRead,BufNewFile *.s setlocal ft=asm_ca65
 au FileType go autocmd BufWritePre <buffer> GoFmt
-au FileType python autocmd BufWritePre <buffer> Black
+au FileType python autocmd BufWritePre <buffer> if get(b:, 'black_enabled', 1) | call black#Black() | endif
+
+function! BlackToggle()
+	if get(b:, 'black_enabled', 1) == 1
+		let b:black_enabled = 0
+		echom "Black disabled"
+	else
+		let b:black_enabled = 1
+		echom "Black enabled"
+	endif
+endfunction
+
+command! BlackDisable :let b:black_enabled=0
+command! BlackEnable :let b:black_enabled=1
+command! BlackToggle :call BlackToggle()
+command! BT :call BlackToggle()
+
+let b:black_enabled=0
 
 runtime! abbrevations.vim
 
@@ -38,7 +61,7 @@ xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 
-colorscheme pencil
+colorscheme base16-helios
 
 " Kitty terminal doesn't seem to like undercurl
 " hi SpellBad term=underline cterm=underline
@@ -50,33 +73,9 @@ if &term =~ '^tmux' || &term =~ '^screen' || &term =~ '^xterm'
   let &t_PE="\<Esc>[201~"
 endif
 
-let g:ledger_bin = 'ledger'
-let g:ledger_fold_blanks = 1
-
-let g:firenvim_config = { 
-    \ 'localSettings': {
-        \ '.*': {
-            \ 'cmdline': 'neovim',
-            \ 'content': 'text',
-            \ 'priority': 0,
-            \ 'selector': 'textarea',
-            \ 'takeover': 'never',
-        \ },
-    \ }
-\ }
-
-let fc = g:firenvim_config['localSettings']
+lua require('init')
 
 if exists('g:started_by_firenvim')
   set laststatus=0
   set guifont=monospace:h12
 endif
-
-let g:neomake_python_enabled_makers = ['flake8']
-let g:SimpylFold_fold_import = 0
-
-lua require('init')
-
-" Full config: when writing or reading a buffer, and on changes in insert and
-" normal mode (after 500ms; no delay when writing).
-call neomake#configure#automake('nrwi', 500)
