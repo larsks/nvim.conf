@@ -386,3 +386,7 @@ wireguard
 Quickstart
 kustomization
 subshells
+vip
+haproxy
+frontends
+sysctl
