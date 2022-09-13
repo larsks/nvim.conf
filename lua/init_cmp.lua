@@ -51,3 +51,35 @@ cmp.setup.cmdline(':', {
         { name = 'cmdline' }
     })
 })
+
+function setAutoCmp(mode)
+  if mode then
+    cmp.setup({
+      completion = {
+        autocomplete = { require('cmp.types').cmp.TriggerEvent.TextChanged }
+      }
+    })
+  else
+    cmp.setup({
+      completion = {
+        autocomplete = false
+      }
+    })
+  end
+end
+
+if (vim.g.cmp_toggle_flag == nil) then
+    vim.g.cmp_toggle_flag = false
+end
+
+function toggleAutoCmp()
+    vim.g.cmp_toggle_flag = not vim.g.cmp_toggle_flag
+    setAutoCmp(vim.g.cmp_toggle_flag)
+end
+
+vim.cmd('command AutoCmpOn lua setAutoCmp(true)')
+vim.cmd('command AutoCmpOff lua setAutoCmp(false)')
+vim.cmd('command AutoCmpToggle lua toggleAutoCmp()')
+
+vim.keymap.set('i', '<A-c>', toggleAutoCmp, {silent=true, noremap=true})
+vim.keymap.set('n', '<Leader>tc', toggleAutoCmp, {silent=true, noremap=true})
