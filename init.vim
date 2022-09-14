@@ -35,13 +35,13 @@ au FileType go autocmd BufWritePre <buffer> GoFmt
 au FileType python autocmd BufWritePre <buffer> if get(b:, 'black_enabled', 1) | call black#Black() | endif
 
 function! BlackToggle()
-	if get(b:, 'black_enabled', 1) == 1
-		let b:black_enabled = 0
-		echom "Black disabled"
-	else
-		let b:black_enabled = 1
-		echom "Black enabled"
-	endif
+    if get(b:, 'black_enabled', 1) == 1
+        let b:black_enabled = 0
+        echom "Black disabled"
+    else
+        let b:black_enabled = 1
+        echom "Black enabled"
+    endif
 endfunction
 
 command! BlackDisable :let b:black_enabled=0
