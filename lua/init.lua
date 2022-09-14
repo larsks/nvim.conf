@@ -40,11 +40,19 @@ g.firenvim_config = {
     localSettings = {
         [".*"] = {
             cmdline = "neovim",
-            content = "text",
-            priority = 0,
             selector = "textarea",
             takeover = "never",
         },
+        ["https?://github.com"] = {
+            cmdline = "neovim",
+            selector = "textarea",
+            takeover = "once",
+        },
+        ["https?://(stackoverflow.com|[^/]*.stackexchange.com)/"] = {
+            cmdline = "neovim",
+            selector = "textarea",
+            takeover = "once",
+        }
     }
 }
 
