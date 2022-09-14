@@ -76,6 +76,20 @@ endif
 lua require('init')
 
 if exists('g:started_by_firenvim')
-  set laststatus=0
-  set guifont=monospace:h12
+    function! AdjustMinimumLines(timer)
+            if &lines < 10
+                set lines=10
+            endif
+    endfunction
+
+    function! OnUIEnter(event) abort
+        if 'Firenvim' ==# get(get(nvim_get_chan_info(a:event.chan), 'client', {}), 'name', '')
+            set laststatus=0
+            set guifont=monospace:h10
+
+            call timer_start(500, function("AdjustMinimumLines"))
+        endif
+    endfunction
+
+    autocmd UIEnter * call OnUIEnter(deepcopy(v:event))
 endif
