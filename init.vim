@@ -16,16 +16,20 @@ nnoremap <Up> gk
 vnoremap <Down> gj
 vnoremap <Up> gk
 
+function MarkdownForBrowser()
+	setlocal ft=markdown tw=0
+endfunction
+
 au BufRead *.ksy setlocal ft=yaml
 au BufRead *.md setlocal ft=markdown
 au BufRead *.ldg setlocal ft=ledger
-au BufRead *superuser.com* setlocal ft=markdown
-au BufRead *serverfault.com* setlocal ft=markdown
-au BufRead *stackoverflow.com* setlocal ft=markdown
-au BufRead *stackexchange.com* setlocal ft=markdown
-au BufRead *ask.openstack.org* setlocal ft=markdown
-au BufRead *ask.fedoraproject.org* setlocal ft=markdown
-au BufRead *github.com* setlocal ft=markdown tw=0
+au BufRead *superuser.com* call MarkdownForBrowser()
+au BufRead *serverfault.com* call MarkdownForBrowser()
+au BufRead *stackoverflow.com* call MarkdownForBrowser()
+au BufRead *stackexchange.com* call MarkdownForBrowser()
+au BufRead *ask.openstack.org* call MarkdownForBrowser()
+au BufRead *ask.fedoraproject.org* call MarkdownForBrowser()
+au BufRead *github.com* call MarkdownForBrowser()
 au BufRead */COMMIT_EDITMSG setlocal ft=markdown tw=75
 au! BufRead,BufNewFile *.bu setlocal ft=yaml
 au! BufRead,BufNewFile *.pp setfiletype puppet
