@@ -42,6 +42,7 @@ g.firenvim_config = {
             cmdline = "neovim",
             selector = "textarea",
             takeover = "never",
+	    filename = '/tmp/firenvim_{hostname}_{pathname%10}_{selector%10}_{timestamp}.{extension}',
         },
         ["https?://github.com"] = {
             cmdline = "neovim",

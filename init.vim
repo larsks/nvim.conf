@@ -23,13 +23,7 @@ endfunction
 au BufRead *.ksy setlocal ft=yaml
 au BufRead *.md setlocal ft=markdown
 au BufRead *.ldg setlocal ft=ledger
-au BufRead *superuser.com* call MarkdownForBrowser()
-au BufRead *serverfault.com* call MarkdownForBrowser()
-au BufRead *stackoverflow.com* call MarkdownForBrowser()
-au BufRead *stackexchange.com* call MarkdownForBrowser()
-au BufRead *ask.openstack.org* call MarkdownForBrowser()
-au BufRead *ask.fedoraproject.org* call MarkdownForBrowser()
-au BufRead *github.com* call MarkdownForBrowser()
+au BufRead /tmp/firenvim_* call MarkdownForBrowser()
 au BufRead */COMMIT_EDITMSG setlocal ft=markdown tw=75
 au! BufRead,BufNewFile *.bu setlocal ft=yaml
 au! BufRead,BufNewFile *.pp setfiletype puppet
