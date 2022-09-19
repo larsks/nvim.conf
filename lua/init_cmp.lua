@@ -59,12 +59,14 @@ function setAutoCmp(mode)
         autocomplete = { require('cmp.types').cmp.TriggerEvent.TextChanged }
       }
     })
+    print("AutoComplete is On")
   else
     cmp.setup({
       completion = {
         autocomplete = false
       }
     })
+    print("AutoComplete is Off")
   end
 end
 

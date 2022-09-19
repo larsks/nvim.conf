@@ -390,3 +390,7 @@ vip
 haproxy
 frontends
 sysctl
+firenvim
+runtimes
+MySQL
+selinux
