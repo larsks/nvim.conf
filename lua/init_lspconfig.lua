@@ -55,3 +55,4 @@ require'lspconfig'.jsonls.setup {
 require('lspconfig').yamlls.setup {
     on_attach = on_attach,
 }
+require'lspconfig'.clangd.setup{}
