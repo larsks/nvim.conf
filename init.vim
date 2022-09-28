@@ -32,6 +32,9 @@ au! BufRead,BufNewFile *.s setlocal ft=asm_ca65
 au FileType go autocmd BufWritePre <buffer> GoFmt
 au FileType python autocmd BufWritePre <buffer> if get(b:, 'black_enabled', 1) | call black#Black() | endif
 
+" Stop shellcheck from whining about *.env files
+au! BufRead,BufNewFile *.env lua vim.diagnostic.disable(0)
+
 function! BlackToggle()
     if get(b:, 'black_enabled', 1) == 1
         let b:black_enabled = 0
